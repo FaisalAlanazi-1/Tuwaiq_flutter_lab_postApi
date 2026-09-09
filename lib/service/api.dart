@@ -1,13 +1,14 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class Api {
   Future<String> sendRequest(String message) async {
     String link =
         'https://generativelanguage.googleapis.com/v1beta/interactions';
     Map<String, String>? header = {
-      'x-goog-api-key': '',
+      'x-goog-api-key':dotenv.get('apiKey') ,
       'Content-Type': 'application/json',
       "Api-Revision": "2026-05-20",
     };

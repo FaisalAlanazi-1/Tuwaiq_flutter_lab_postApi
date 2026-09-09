@@ -32,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
         });
         String botmessagw = await Api().sendRequest(message.text) ; 
+        print(botmessagw);  
         ChatMessage reply = ChatMessage(user: user2, createdAt: DateTime.now()  , text: botmessagw);
         messages.add(reply) ;  
         setState(() {
